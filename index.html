@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophia - The Beyond</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>PHILOSOPHIA</h1>
+            <div class="subtitle">Welcome to The Beyond</div>
+        </header>
+        
+        <div class="main-interface">
+            <!-- Left Panel: Player Stats and Form Visualization -->
+            <div class="left-panel">
+                <div class="player-info">
+                    <h3>Form Status</h3>
+                    <div class="stat-line">
+                        <span class="stat-label">Form:</span>
+                        <span id="player-form">Triangle</span>
+                    </div>
+                    <div class="stat-line">
+                        <span class="stat-label">Knowledge:</span>
+                        <span id="player-knowledge">1</span>
+                    </div>
+                    <div class="stat-line">
+                        <span class="stat-label">Reality:</span>
+                        <span id="player-reality">10</span>/<span id="player-max-reality">10</span>
+                    </div>
+                    <div class="stat-line">
+                        <span class="stat-label">Willpower:</span>
+                        <span id="player-willpower">5</span>/<span id="player-max-willpower">5</span>
+                    </div>
+                </div>
+                
+                <div class="form-display">
+                    <h4>Your Form</h4>
+                    <div id="three-container"></div>
+                </div>
+                
+                <div class="symbols-panel">
+                    <h4>Symbols</h4>
+                    <div id="symbols-list">
+                        <div class="symbol">Basic Reasoning</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Center Panel: Game Text and Location -->
+            <div class="center-panel">
+                <div class="location-display">
+                    <h3 id="current-location">The Void</h3>
+                    <p id="location-description">You find yourself in the endless expanse of The Beyond. Abstract geometries float in the distance, and whispers of ancient philosophical debates echo through the void.</p>
+                </div>
+                
+                <div class="game-output" id="game-output">
+                    <p class="system-message">You have been downloaded into The Beyond as a simple Triangle. Your journey toward higher forms begins now.</p>
+                    <p class="system-message">Type 'help' to see available commands.</p>
+                </div>
+                
+                <div class="input-area">
+                    <input type="text" id="command-input" placeholder="Enter command..." autocomplete="off">
+                    <button id="submit-command">Submit</button>
+                </div>
+            </div>
+            
+            <!-- Right Panel: Actions and Commands -->
+            <div class="right-panel">
+                <div class="actions-panel">
+                    <h4>Actions</h4>
+                    <button class="action-btn" data-command="look">Look Around</button>
+                    <button class="action-btn" data-command="meditate">Meditate</button>
+                    <button class="action-btn" data-command="symbols">View Symbols</button>
+                    <button class="action-btn" data-command="status">Check Status</button>
+                    <button class="action-btn" data-command="forms">Platonic Forms</button>
+                    <button class="action-btn" data-command="iterate">Attempt Iteration</button>
+                    <button class="action-btn" data-command="faces">Show Faces</button>
+                </div>
+                
+                <div class="movement-panel">
+                    <h4>Movement</h4>
+                    <div class="movement-grid">
+                        <button class="move-btn" data-direction="up">↑</button>
+                        <button class="move-btn" data-direction="left">←</button>
+                        <button class="move-btn" data-direction="down">↓</button>
+                        <button class="move-btn" data-direction="right">→</button>
+                    </div>
+                </div>
+                
+                <div class="philosophical-panel">
+                    <h4>Philosophical Mode</h4>
+                    <button class="philo-btn" data-mode="thesis">Present Thesis</button>
+                    <button class="philo-btn" data-mode="antithesis">Counter Argue</button>
+                    <button class="philo-btn" data-mode="synthesis">Seek Synthesis</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

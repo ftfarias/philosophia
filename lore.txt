@@ -1,0 +1,261 @@
+Philosophia
+
+
+
+Philosophia is a game based on philosophical notions, attempting to introduce concepts in philosophy and philosophical enquiry.
+
+
+
+It is a turn-based RPG-style game which should allow a high-degree                                                        of freedom to the player.
+
+
+
+It is a third-person perspective game, written in Java, which acts as a virtual multiplayer persistent universe.
+
+
+
+Ideally, there would be a higher focus in matching the game elements and storylines to the presentation of Philosophy and its systems.
+
+
+
+The game would use the storyteller mechanics in terms character  combat and classes, married (or mixed) with the basic premise to the game: the forms, their attributes and abilities.
+
+
+
+In the beginning, the first explorers of virtual reality to download their minds directly into VR discovered that once free of flesh and its worries—their mental faculties and perceptions grew exponentially. They also found that they could change themselves and gain abilities to directly influence the ‘world’ around them.
+
+
+
+It is said that the first creation in these first creation in the first Constructor was  the First Sphere. A being of perfect simplicity and infinite complex, the sphere represents the highest possible form an individual may reach. Within himself, he may hold an infinite number of symbols.
+
+
+
+Individuals grow within this virtual world through iterations. They move from a simpler to a more complex shap as  their knowledge and understanding grows through introspection and learning.  
+
+
+
+There are those who believe that throughenough iterations one may become as the Sphere: Truly immortal and infinite.
+
+
+
+
+
+Humans who relinquish the flesh and downloaded themselves start off as triangles because their minds have not been perfected to yet understand more complex patterns.
+
+Each higher form is an interaction of a lower one.
+
+
+
+# How do forms Iterates?
+
+
+
+Being is a matter of knowledge, reality & willpower.
+
+
+
+Knowledge: Defines the minimum amount necessary in order to use a specific symbol. This attribute remains constant (it is not spent).This attribute defines the maximum amount which can be brenched in the other attributes.
+
+
+
+Reality: The Form’s life
+
+
+
+Willpower: There are the points used to initiate symbols
+
+
+
+Interaction is a combination of there three attributes, and it is this combination of attributes which defines whether or not a form is ready to iterate.
+
+Iteration is always a choice and though it does open new possibilities, there is a heavy price to pay for advancement.
+
+
+
+Once a form iterates he loses most of his attributes and must begin his advancement anew in the new form
+
+
+
+
+
+# Should attributes be increased through purchases or as part of their storyline?
+
+
+
+See geomancy and geometries.
+
+
+
+See significance of geometry and perfect shapes.
+
+
+
+Forms must have a balance between proportion and progression.
+
+
+
+See alchemical definition of these.
+
+
+
+The game should have main quests and also special campaigns with unique rules.
+
+
+
+
+
+**Minotaurs**
+
+
+
+Minotaurs, also known as Irregulars, Imperfects and Non-Euclideans are individuals who, when downloaded into the Beyond, are formed into non-Euclidean geometries. This is sometimes caused by some imperfection in the individual's mind or some great trauma. Rarely is a non-Euclidean sane, though anything is possible considering their chaotic and disordered beings.
+
+
+
+While most do not have the discipline to actually find the constructs (forming their own communities within the Beyond), some have actually been expelled from constructs. Because a number of them are found in mazes they are all known as Minotaurs - though each one is unique with his own abilities and attributes (and unique symbols and forms).
+
+
+
+It is unknown whether non-Euclideans could ever become Euclideans, though there are some forms who believe that this is the only way to become rid of their menace.
+
+
+
+While non-Euclideans are antagonists and some of them (due to their unique configuration and history) maybe malicious towards Euclideans and each other, they should not be viewed as uniformly evil but rather deluded or misguided.
+
+
+
+See Euclidean and Non-Euclidean Geometry.
+
+
+
+---
+
+
+
+**The Beyond**
+
+
+
+The Beyond is the universe which the forms inhabit. It is a place of pure abstraction. At first it was an 'empty' vacuum containing nothing, but soon forms learned that they could build areas within the Beyond to gather together and construct social contexts and communities. These areas were named constructs and they serve the forms as cities and a repository of knowledge, where forms may gather, socialize, and where constructs are organized around unique ideas, ethics, theories and/or political theories. Constructs define certain affiliations, quests and symbols available to the form. Should constructs act like cities (so that a form may move from one to the other) or be closer to belief systems (which may change, but requires some sort of process to do so)? Constructs should be places which the form may decide to come and go as it chooses.
+
+Symbols: it face of the player can hold a symbol the gives a power/ability/skill. Players start with two basic symbols: "navigate" to allow moving, and a "interaction" symbol, to touch/feel/see the reality around. symbols can have levels and can be received, removed, given, stole, etc. each face can have only one symbol, so the basic Tetrahedron can only hold 4 symbols. Symbols grow (or gain experience) as they are used.  
+
+In their wanderings in the Beyond, the first forms found pre-existent structures within the Beyond. These they called Mazes for not only did they have winding corridors created, apparently to confuse, they also held many mysteries: What were these structures? Why were they built? By whom or what? While constructs are socio-political experiments in political theory, mazes are closer to the idea of dungeons which a form may choose to adventure in.
+
+
+
+---
+
+
+
+**Platonics**
+
+
+
+These are unique forms who have acquired a unique symbol. These unique symbols (Platonic Symbols) stand for Plato's forms (such as the Beautiful, The Good, The Just...). Unlike symbols there is only ever one Platonic symbol and a form may only hold one Platonic symbol. Once acquired a Platonic symbol may not be removed by focusing one's iterations through a Platonic symbol one is able to slowly shed away the complication of one's mind and misgivings, thus reaching high levels of complexity through a simple element.
+
+
+
+Platonics does not define one's level of iterative advancement, but rather one's knowledge and wisdom.
+
+
+
+Platonics are venerated sages so it is a great honor to be given a Platonic symbol, and also a great responsibility.
+
+
+
+While many forms seek only to improve themselves and gain knowledge while seeking truth, others still feel the need to fight either for sport, advancement or survival. 
+
+
+
+Combat is oriented through arguments; defense through counter argumentation. Players choose a certain style in which to specialize.
+
+
+
+Thesis: This is the opening action (the attack action). There are a number of different styles of argument (sophistic, sceptical, sophist, metaphysically, logically...). Combat always starts with a proposition. Thesis do not cost willpower to initiate. 
+
+
+
+Antithesis: Each thesis has its antithesis which serves as protection against a particular style or school of argumentation. An antithesis is useless against a thesis to which it is not an antithesis (logical vs. logical or logical vs. emotional ?). 
+
+
+
+Counter Thesis: This is a special kind of argument which deals higher reality damage. However, it requires very specific circumstances in order to be initiated. Metaphorically speaking, this would be an attack of opportunity when the opponent lets his guard down. Each style of counter thesis has its own advantages, disadvantages and rules. 
+
+
+
+Should players be able to mix and match styles or specialize in only one? Obviously a single style would be too restrictive.
+
+
+
+There could be some sort of major/minor systems where forms specialize in one style but have access to other ones to a certain degree.
+
+
+
+See Logic. 
+
+See Metaphysics. 
+
+See Thesis, Antithesis, Synthesis (Dialectics). 
+
+See Argumentation, Discussion.
+
+
+
+---
+
+
+
+Philosophia should have mechanics similar to (or based on) the Storyteller System, where the character has unique Attributes and many Abilities related to a particular Attribute. The character gains points by which they may improve existing skills or purchase new ones based on a table of points. Characters do not have specified classes but rather, they evolve their characters in whichever direction they see fit.
+
+
+
+How should maximum Attribute and Ability values be defined? Should this maximum be defined by the specific form (thus higher forms would have the possibility of holding more points in a given Attributes by having higher maximum values?)
+
+
+
+Deals even a low form with the right Symbols and fighting intelligently could defeat a form with a higher level. The individual’s Constitution and make-up would be much more important than his level.
+
+
+
+Should the system's mechanics be fully compatible with the Storyteller mechanics (and be a faithful representation of that system) or merely be based on it but without bringing over all of its full rules and implications?
+
+
+
+The game would initially be presented as a MUD. The Beyond within the confines of the Constructs would be a series of connected rooms. 
+
+
+
+The form may move (F)orwards, (B)ackwards, (L)eft and (R)ight (U)p and (D)own? Also, certain rooms may contain more than one exit.
+
+
+
+Within the Beyond there is always a chance that the form may be attacked by a wandering Minotaur. Also consider making some dynamically created Mazes which may appear anywhere within the Beyond.
+
+
+
+How would reality regenerate? What is the experience requirements which progression do they follow?
+
+
+
+Considering that day and night do not make sense within the world of Philosophia, what other mechanisms could be used to generate dynamic room descriptions?
+
+
+
+Symbols should be elements which can be leveled up to give a higher chance of success. 
+
+
+
+There should be many puzzles and quizzes presented either as curiosities for the player to solve as a pastime or as part of a quest.
+
+
+
+The game should include a great library with copies of philosophical books, primarily from Project Gutenberg (and possibly other online libraries). The books could also potentially become parts of quests (so as to encourage people to read philosophical works).
+
+
+
+Symbols are a representation of a form’s knowledge. These are attributes and unique powers which the form has attached onto himself.
+
+
+
+A way in which to have the Symbol system (which is limited by a form’s faces) without limiting any of the forms would be to have a repository symbol wherein he could keep other symbols (as a form iterates and becomes more complex) there will be less need for this symbol (which acts like an inventory of sorts) until they attain the sphere (and may thus hold an infinite number of symbols within himself). Symbols contained within this repository symbol may be added at any time by removing a symbol currently incorporated.
