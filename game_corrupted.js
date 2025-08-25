@@ -199,6 +199,259 @@ class PhilosophiaGame {
             this.executeCommand(command);
         }
     }
+            symbolMesh.lookAt(
+                symbolMesh.position.x + normal.x,
+                symbolMesh.position.y + normal.y,
+                symbolMesh.position.z + normal.z
+            );
+        }
+    }
+
+    positionCubeSymbol(symbolMesh, faceIndex) {
+        const distance = 0.78; // Just outside cube surface
+        
+        const faces = [
+            { pos: [0, 0, distance], normal: [0, 0, 1] },     // front
+            { pos: [0, 0, -distance], normal: [0, 0, -1] },   // back  
+            { pos: [0, distance, 0], normal: [0, 1, 0] },     // top
+            { pos: [0, -distance, 0], normal: [0, -1, 0] },   // bottom
+            { pos: [distance, 0, 0], normal: [1, 0, 0] },     // right
+            { pos: [-distance, 0, 0], normal: [-1, 0, 0] }    // left
+        ];
+        
+        if (faces[faceIndex]) {
+            const face = faces[faceIndex];
+            symbolMesh.position.set(...face.pos);
+            
+            // Make symbol face outward from the surface
+            const normal = new THREE.Vector3(...face.normal);
+            symbolMesh.lookAt(
+                symbolMesh.position.x + normal.x,
+                symbolMesh.position.y + normal.y,
+                symbolMesh.position.z + normal.z
+            );
+        }
+    }
+
+    positionOctahedronSymbol(symbolMesh, faceIndex) {
+        const distance = 1.28; // Just outside octahedron surface
+        
+        // Octahedron has 8 triangular faces
+        const t = Math.sqrt(3) / 3; // 1/√3
+        const faces = [
+            { pos: [t, t, t], normal: [1, 1, 1] },       // Top-front-right
+            { pos: [-t, t, t], normal: [-1, 1, 1] },     // Top-front-left
+            { pos: [t, t, -t], normal: [1, 1, -1] },     // Top-back-right
+            { pos: [-t, t, -t], normal: [-1, 1, -1] },   // Top-back-left
+            { pos: [t, -t, t], normal: [1, -1, 1] },     // Bottom-front-right
+            { pos: [-t, -t, t], normal: [-1, -1, 1] },   // Bottom-front-left
+            { pos: [t, -t, -t], normal: [1, -1, -1] },   // Bottom-back-right
+            { pos: [-t, -t, -t], normal: [-1, -1, -1] }  // Bottom-back-left
+        ];
+        
+        if (faces[faceIndex]) {
+            const face = faces[faceIndex];
+            symbolMesh.position.set(...face.pos);
+            
+            const normal = new THREE.Vector3(...face.normal).normalize();
+            symbolMesh.lookAt(
+                symbolMesh.position.x + normal.x,
+                symbolMesh.position.y + normal.y,
+                symbolMesh.position.z + normal.z
+            );
+        }
+    }
+
+    positionDodecahedronSymbol(symbolMesh, faceIndex) {
+        const distance = 1.05; // Just outside dodecahedron surface
+        
+        // Simplified dodecahedron positioning - 12 faces distributed around
+        const goldenRatio = (1 + Math.sqrt(5)) / 2;
+        const baseAngle = (faceIndex * 2 * Math.PI) / 12;
+        const heightVariation = Math.sin(faceIndex * Math.PI / 6);
+        
+        const pos = [
+            Math.cos(baseAngle) * distance,
+            heightVariation * distance * 0.6,
+            Math.sin(baseAngle) * distance
+        ];
+        
+        symbolMesh.position.set(...pos);
+        
+        // Face outward from center
+        const normal = new THREE.Vector3(...pos).normalize();
+        symbolMesh.lookAt(
+            symbolMesh.position.x + normal.x,
+            symbolMesh.position.y + normal.y,
+            symbolMesh.position.z + normal.z
+        );
+    }
+
+    positionIcosahedronSymbol(symbolMesh, faceIndex) {
+        const distance = 1.25; // Just outside icosahedron surface
+        
+        // Simplified icosahedron positioning - 20 faces
+        const goldenRatio = (1 + Math.sqrt(5)) / 2;
+        const baseAngle = (faceIndex * 2 * Math.PI) / 20;
+        const heightLevel = Math.floor(faceIndex / 5); // 4 levels of 5 faces each
+        const levelAngle = (faceIndex % 5) * (2 * Math.PI) / 5;
+        
+        const heightOffset = (heightLevel - 1.5) * 0.4; // Center around 0
+        
+        const pos = [
+            Math.cos(levelAngle) * distance * 0.85,
+            heightOffset * distance,
+            Math.sin(levelAngle) * distance * 0.85
+        ];
+        
+        symbolMesh.position.set(...pos);
+        
+        // Face outward from center
+        const normal = new THREE.Vector3(...pos).normalize();
+        symbolMesh.lookAt(
+            symbolMesh.position.x + normal.x,
+            symbolMesh.position.y + normal.y,
+            symbolMesh.position.z + normal.z
+        );
+    }
+
+    createInteractiveFaces(geometry) {
+        // Remove any existing face meshes
+        if (this.playerMesh.faceMeshes) {
+            this.playerMesh.faceMeshes.forEach(mesh => this.playerMesh.remove(mesh));
+        }
+        this.playerMesh.faceMeshes = [];
+
+        // Create invisible meshes for each face to detect clicks
+        const faces = geometry.getAttribute('position').count / 3;
+        for (let i = 0; i < faces; i++) {
+            const faceMaterial = new THREE.MeshBasicMaterial({
+                transparent: true,
+                opacity: 0,
+                side: THREE.DoubleSide
+            });
+
+            // Create a small geometry for each face
+            const faceGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(9); // 3 vertices * 3 coordinates
+
+            // Copy face vertices from main geometry
+            const mainPositions = geometry.getAttribute('position').array;
+            for (let j = 0; j < 9; j++) {
+                positions[j] = mainPositions[i * 9 + j];
+            }
+
+            faceGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            faceGeometry.computeVertexNormals();
+
+            const faceMesh = new THREE.Mesh(faceGeometry, faceMaterial);
+            faceMesh.userData = { faceIndex: i, isFace: true };
+
+            this.playerMesh.add(faceMesh);
+            this.playerMesh.faceMeshes.push(faceMesh);
+        }
+    }
+
+    setupThreeJSControls() {
+        const container = document.getElementById('three-container');
+
+        container.addEventListener('mousedown', (event) => {
+            this.isMouseDown = true;
+            this.mouseX = event.clientX;
+            this.mouseY = event.clientY;
+        });
+
+        container.addEventListener('mousemove', (event) => {
+            if (this.isMouseDown && this.playerMesh) {
+                const deltaX = event.clientX - this.mouseX;
+                const deltaY = event.clientY - this.mouseY;
+
+                this.playerMesh.rotation.y += deltaX * this.rotationSpeed;
+                this.playerMesh.rotation.x += deltaY * this.rotationSpeed;
+
+                this.mouseX = event.clientX;
+                this.mouseY = event.clientY;
+            }
+        });
+
+        container.addEventListener('mouseleave', () => {
+            this.isMouseDown = false;
+        });
+
+        container.addEventListener('mouseup', () => {
+            this.isMouseDown = false;
+        });
+
+        container.addEventListener('click', (event) => {
+            this.onThreeJSClick(event);
+        });
+
+        // Prevent context menu on right click
+        container.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+        });
+    }
+
+    onThreeJSClick(event) {
+        const container = document.getElementById('three-container');
+        const rect = container.getBoundingClientRect();
+
+        // Calculate mouse position in normalized device coordinates
+        this.mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        this.mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+        // Update the picking ray with the camera and mouse position
+        this.raycaster.setFromCamera(this.mouse, this.camera);
+
+        // Calculate objects intersecting the picking ray
+        const intersects = this.raycaster.intersectObjects(this.playerMesh.faceMeshes || []);
+
+        if (intersects.length > 0) {
+            const clickedFace = intersects[0].object;
+            const faceIndex = clickedFace.userData.faceIndex;
+            this.onFaceClick(faceIndex);
+        }
+    }
+
+    onFaceClick(faceIndex) {
+        const maxFaces = this.getCurrentFormFaces();
+        if (faceIndex >= maxFaces) return;
+
+        const symbol = this.player.symbols[faceIndex];
+        if (symbol) {
+            this.addMessage(`Face ${faceIndex + 1}: Activated ${symbol.name}!`, 'system');
+            this.gainSymbolExperience(symbol.name, 2);
+
+            // Special activation effects based on symbol type
+            switch (symbol.name) {
+                case 'Interaction':
+                    this.addMessage('Your connection to reality strengthens.', 'game');
+                    break;
+                case 'Logic':
+                    this.addMessage('Your reasoning becomes clearer.', 'game');
+                    break;
+                case 'Memory':
+                    this.addMessage('Past knowledge flows through your mind.', 'game');
+                    break;
+                default:
+                    this.addMessage(`The power of ${symbol.name} flows through you.`, 'game');
+            }
+        } else {
+            this.addMessage(`Face ${faceIndex + 1}: Empty face. You could equip a symbol here.`, 'system');
+        }
+    }
+
+
+    processCommand() {
+        const input = document.getElementById('command-input');
+        const command = input.value.trim().toLowerCase();
+        input.value = '';
+
+        if (command) {
+            this.addMessage(`> ${command}`, 'player');
+            this.executeCommand(command);
+        }
+    }
 
     executeCommand(command) {
         const args = command.split(' ');
@@ -419,7 +672,7 @@ class PhilosophiaGame {
         this.addMessage(`Your form now has ${newFaces} faces available for symbols.`, 'system');
         this.addMessage('Your Reality and Willpower have been restored and expanded.', 'system');
 
-        this.update3DForm();
+        this.createPlayerForm();
         this.updateUI();
     }
 
@@ -505,7 +758,7 @@ class PhilosophiaGame {
         this.addMessage(`Equipped ${symbolName} to face ${faceNumber + 1}.`, 'game');
         this.updateUI();
         // Update 3D visualization
-        this.update3DForm();
+        this.createPlayerForm();
     }
 
     unequipSymbol(args) {
@@ -535,7 +788,7 @@ class PhilosophiaGame {
         this.addMessage(`Unequipped ${symbol.name} from face ${faceNumber + 1}.`, 'game');
         this.updateUI();
         // Update 3D visualization
-        this.update3DForm();
+        this.createPlayerForm();
     }
 
     // Helper method to find symbol name with case-insensitive matching

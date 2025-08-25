@@ -138,7 +138,7 @@ See Euclidean and Non-Euclidean Geometry.
 
 The Beyond is the universe which the forms inhabit. It is a place of pure abstraction. At first it was an 'empty' vacuum containing nothing, but soon forms learned that they could build areas within the Beyond to gather together and construct social contexts and communities. These areas were named constructs and they serve the forms as cities and a repository of knowledge, where forms may gather, socialize, and where constructs are organized around unique ideas, ethics, theories and/or political theories. Constructs define certain affiliations, quests and symbols available to the form. Should constructs act like cities (so that a form may move from one to the other) or be closer to belief systems (which may change, but requires some sort of process to do so)? Constructs should be places which the form may decide to come and go as it chooses.
 
-Symbols: it face of the player can hold a symbol the gives a power/ability/skill. Players start with two basic symbols: "navigate" to allow moving, and a "interaction" symbol, to touch/feel/see the reality around. symbols can have levels and can be received, removed, given, stole, etc. each face can have only one symbol, so the basic Tetrahedron can only hold 4 symbols. Symbols grow (or gain experience) as they are used.  
+Symbols: Each face of the player can hold a symbol that gives a power/ability/skill. Players start with just 1 symbol: "interaction", which allows movement and interaction with the reality around them. Symbols can have levels and can be received, removed, given, stolen, etc. Each face can hold only one symbol, so the basic Tetrahedron can only hold 4 symbols. Symbols grow (or gain experience) as they are used.  
 
 In their wanderings in the Beyond, the first forms found pre-existent structures within the Beyond. These they called Mazes for not only did they have winding corridors created, apparently to confuse, they also held many mysteries: What were these structures? Why were they built? By whom or what? While constructs are socio-political experiments in political theory, mazes are closer to the idea of dungeons which a form may choose to adventure in.
 
@@ -259,3 +259,6 @@ Symbols are a representation of a form’s knowledge. These are attributes and u
 
 
 A way in which to have the Symbol system (which is limited by a form’s faces) without limiting any of the forms would be to have a repository symbol wherein he could keep other symbols (as a form iterates and becomes more complex) there will be less need for this symbol (which acts like an inventory of sorts) until they attain the sphere (and may thus hold an infinite number of symbols within himself). Symbols contained within this repository symbol may be added at any time by removing a symbol currently incorporated.
+
+
+

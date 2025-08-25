@@ -101,6 +101,16 @@ body {
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #4a5568;
     border-radius: 5px;
+    cursor: grab;
+    user-select: none;
+}
+
+#three-container:active {
+    cursor: grabbing;
+}
+
+#three-container canvas {
+    display: block;
 }
 
 /* Symbols Panel */
